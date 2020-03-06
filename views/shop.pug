@@ -1,0 +1,24 @@
+extends layout/main-layout.pug
+
+block styles
+    link(rel="stylesheet", href="/css/home.css")
+
+block content
+    h1 Some content for Shop Page
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corrupti natus at repudiandae incidunt. Voluptatibus atque optio, totam neque provident exercitationem voluptates cum animi dolore fugiat itaque! Optio, beatae aliquam?
+
+    if prods.length > 0
+        .grid
+            each product in prods
+                article.card.product-item
+                    header.card__header
+                        h2.product__title #{product.title}
+                        .card__item
+                            img(src="https://www.commoncraft.com/sites/all/themes/orange/images/book-img.png")
+                        .card__content
+                            h3.product__price 12.32
+                            p.product__description Some description
+                        .card__action
+                            button.btn Add to Cart
+    else
+        p We do not have any products
