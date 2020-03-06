@@ -1,0 +1,32 @@
+
+<%- include('../includes/head.ejs') %>
+<main class="container">
+    <% if (prods.length > 0) { %>
+        <div class="grid">
+            <% prods.forEach(prod => { %>
+                <article class="card product-item">
+                    <header class="card__header">
+                        <h2 class="product__title"><%= prod.title %></h2>
+                    </header>
+                    <div class="card__img">
+                        <img src="<%= prod.imageUrl %>" alt="<%= prod.title %>">
+                    </div>
+                    <div class="card__item">
+                        <h3 class="product__price"><%= prod.price %></h3>
+                        <p class="product__description"><%= prod.description %></p>
+                    </div>
+                    <div class="card__action">
+                        <a href="/admin/edit-product/<%= prod.id %>?edit=true" class="btn">Edit</a>
+                        <form action="/admin/delete-product" method="POST">
+                            <input type="hidden" name="productId" value="<%=prod.id%>">
+                            <button class="btn" type="submit">Delete</button>
+                        </form>
+                    </div>
+                </article>
+            <% }) %>
+        </div>
+    <% } else { %>
+        <p>We do not have any products</p>
+    <% } %>
+</main>
+<%- include('../includes/footer.ejs') %>
