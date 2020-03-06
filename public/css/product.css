@@ -1,0 +1,20 @@
+.card__img {
+    max-width: 200px;
+}
+
+.card__img img {
+    display: block;
+    width: 100%;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-item {
+    margin: 0 10px 10px;
+    padding: 10px;
+    box-shadow: 1px 1px 12px rgba(0,0,0,0.6);
+}
