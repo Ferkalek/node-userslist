@@ -22,4 +22,4 @@ app.use('/admin', adminRoutes);
 
 app.use(errorCtrl.get404);
 
-app.listen(3005);
+app.listen(3000);
