@@ -1,8 +1,6 @@
 const path = require('path');
 const fs = require('fs');
 
-console.log('path ', __dirname);
-
 const requestHandler = (req, res) => {
     const url = req.url;
     const method = req.method;
@@ -51,7 +49,11 @@ const requestHandler = (req, res) => {
 
         return req.on('end', () => {
             fs.readFile('users.txt', (err, data) => {
-                if (err) throw err;
+                if (err) {
+                    // TODO need to add show error or revert on another page
+                    console.log('----', err);
+                    return
+                };
                 body.push(data);
 
                 const parsData = Buffer.concat(body).toString();
@@ -63,13 +65,7 @@ const requestHandler = (req, res) => {
                     return res.end();
                 });
             });
-
-            
-
-
         });
-
-        
     }
 };
 
