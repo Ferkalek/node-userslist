@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Ferkalek/node-userslist/issues"
   },
-  "homepage": "https://github.com/Ferkalek/node-userslist#readme"
+  "homepage": "https://github.com/Ferkalek/node-userslist#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
