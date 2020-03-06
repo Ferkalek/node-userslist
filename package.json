@@ -2,9 +2,11 @@
   "name": "node-userslist",
   "version": "1.0.0",
   "description": "NodeJS examples",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/Ferkalek/node-userslist/issues"
   },
-  "homepage": "https://github.com/Ferkalek/node-userslist#readme"
+  "homepage": "https://github.com/Ferkalek/node-userslist#readme",
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "nodemon": "^2.0.2",
+    "pug": "^2.0.4"
+  }
 }
