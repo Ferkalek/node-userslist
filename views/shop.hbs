@@ -1,0 +1,26 @@
+<h1>Home page</h1>
+<p>List of all products</p>
+
+{{#if hasProducts}}
+    <div class="grid">
+        {{#each prods}}
+            <article class="card product-item">
+                <header class="card__header">
+                    <h2 class="product__title">{{this.title}}</h2>
+                </header>
+                <div class="card__item">
+                    <img src="https://www.commoncraft.com/sites/all/themes/orange/images/book-img.png">
+                </div>
+                <div class="card__item">
+                    <h3 class="product__price">12.32</h3>
+                    <p class="product__description">Some description</p>
+                </div>
+                <div class="card__item">
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </article>
+        {{/each}}
+    </div>
+{{else}}
+    <p>We do not have any products</p>
+{{/if}}
