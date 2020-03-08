@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express'); // import express
 const path = require('path');
 const bodyParser = require('body-parser');
 const errorCtrl = require('./controllers/error');
@@ -10,6 +10,7 @@ app.set('views', 'views');
 
 // import routes
 const adminRoutes = require('./routes/admin');
+
 const shopRoutes = require('./routes/shop');
 // end import routes
 
