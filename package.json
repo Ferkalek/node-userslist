@@ -4,7 +4,9 @@
   "description": "NodeJS examples",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/Ferkalek/node-userslist/issues"
   },
-  "homepage": "https://github.com/Ferkalek/node-userslist#readme"
+  "homepage": "https://github.com/Ferkalek/node-userslist#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
