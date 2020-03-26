@@ -1,19 +1,9 @@
-const express = require('express');
-const path = require('path');
+const http = require('http');
 
-const homeRouter = require('./routes/home');
-const usersRouter = require('./routes/users');
+const express = require('express');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
+const server = http.createServer(app);
 
-app.use((req, res, next) => {
-    console.log('Users app');
-    next();
-});
-
-app.use(homeRouter);
-app.use(usersRouter);
-
-app.listen(3002);
+server.listen(3002);
