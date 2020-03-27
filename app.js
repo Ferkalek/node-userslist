@@ -1,9 +1,13 @@
-const http = require('http');
-
 const express = require('express');
 
 const app = express();
 
-const server = http.createServer(app);
+app.use('/list', (req, res, next) => {
+    res.send('<h1>List</h1>');
+});
 
-server.listen(3002);
+app.use('/', (req, res, next) => {
+    res.send('<h1>Simple version</h1>');
+});
+
+app.listen(3002);
