@@ -1,0 +1,14 @@
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    padding-right: 12px;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #2220cc;
+}
