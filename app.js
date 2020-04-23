@@ -3,22 +3,24 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const app = express();
+
+// these 2 line need for templating
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 const adminRouter = require('./routes/admin');
 const shopRouter = require('./routes/shop');
+const err404Router = require('./routes/404');
 
 const rootDir = require('./utils/path');
-
-const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public'))); // add public path
 
-app.use(adminRouter);
+app.use(adminRouter.router);
 app.use(shopRouter);
 
-// add error 404
-app.use((req, res, next) => {
-    res.status(404).sendFile(path.join(rootDir, 'views', '404.html'));
-});
+app.use(err404Router);
 
 app.listen(3002);

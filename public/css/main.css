@@ -10,5 +10,10 @@ nav ul li {
 
 nav ul a {
     text-decoration: none;
+    color: #938de8;
+}
+
+nav ul a.active {
     color: #2220cc;
+    text-decoration: underline;
 }
